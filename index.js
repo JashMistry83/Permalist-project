@@ -25,7 +25,7 @@ app.get("/", async (req, res) => {
     console.log("/ GET REQ - ITEMS = ", items.rows);
 
     res.render("index.ejs", {
-      listTitle: "Today",
+      listTitle: "To do list",
       listItems: items.rows,
     });
   } catch (error) {
