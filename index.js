@@ -20,7 +20,7 @@ app.use(express.static("public"));
 
 app.get("/", async (req, res) => {
   try {
-    const items = await db.query("SELECT * FROM todolist");
+    const items = await db.query("SELECT * FROM todolist ORDER BY id");
 
     console.log("/ GET REQ - ITEMS = ", items.rows);
 
