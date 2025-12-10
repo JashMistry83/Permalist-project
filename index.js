@@ -5,12 +5,13 @@ import "dotenv/config";
 
 const app = express();
 const port = 3000;
-const db = new pg.Client({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST ,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+
+// We use a 'Pool' instead of 'Client' for better performance in production
+const db = new pg.Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false, // Required for Neon/Render to work correctly
+  },
 });
 
 db.connect();
@@ -29,7 +30,7 @@ app.get("/", async (req, res) => {
       listItems: items.rows,
     });
   } catch (error) {
-    console.log("Error occurs...", error);
+    console.log("Error occurs...", error);  
   }
 });
 

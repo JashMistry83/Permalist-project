@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / compiled files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+.eggs/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Editor/IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+*.orig
+*.log
+
+# Build artifacts
+dist/
+build/
+
+# Test-related files
+.testrepository/
+.stestr/
+.coverage
+htmlcov/
+
+# Configuration files that should not be committed
+# (e.g., local settings, credentials)
+local_settings.py
+*.conf.sample
+*.ini.sample
+
+# Documentation build output
+docs/_build/
+
+# Operating System specific files
+.DS_Store
+Thumbs.db
+
+# Any other project-specific files or directories to ignore
